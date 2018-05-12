@@ -15,7 +15,7 @@ export default function(serviceName, headers) {
 
 const resolveEndpoint = serviceName => {
   //TODO Use DNS resolver to set appropriate endpoint.
-  return 'https://SERVICE.aws.yea'
+  return serviceName
 }
 
 const getApiKey = () => {
