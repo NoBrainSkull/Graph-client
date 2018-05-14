@@ -1,8 +1,8 @@
 {
   "name": "@nutshelllab/graph-client",
-  "version": "0.0.2",
+  "version": "0.0.4",
   "description": "Discover services DNS and initialize graphQl Client accordingly",
-  "main": "index.js",
+  "main": "lib/graph-client.js",
   "scripts": {
     "build": "webpack --config webpack.config.js"
   },
