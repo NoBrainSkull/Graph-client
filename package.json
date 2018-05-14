@@ -1,6 +1,6 @@
 {
   "name": "@nutshelllab/graph-client",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Discover services DNS and initialize graphQl Client accordingly",
   "main": "lib/graph-client.js",
   "scripts": {
