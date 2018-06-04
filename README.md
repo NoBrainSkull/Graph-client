@@ -1,4 +1,4 @@
 # Graph-client
-Discover services DNS and initialize graphQl Client accordingly
+Initialize graphQl Client and Sign request for IAM authentication
 
 :construction::construction::construction::construction::construction::construction::construction::construction::construction::construction:

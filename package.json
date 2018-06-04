@@ -1,7 +1,7 @@
 {
   "name": "@nutshelllab/graph-client",
-  "version": "0.0.5",
-  "description": "Discover services DNS and initialize graphQl Client accordingly",
+  "version": "0.0.6",
+  "description": "Initialize graphQl Client and Sign request for IAM authentication",
   "main": "lib/graph-client.js",
   "scripts": {
     "build": "webpack --config webpack.config.js"
@@ -12,8 +12,7 @@
   },
   "keywords": [
     "graphql",
-    "dns",
-    "discovery",
+    "sign",
     "aws"
   ],
   "author": "Nutshell",
@@ -23,7 +22,10 @@
   },
   "homepage": "https://github.com/RaisonBlue/Graph-client#readme",
   "dependencies": {
-    "graphql-request": "^1.6.0"
+    "@nutshelllab/aws4-signer": "^0.0.1",
+    "apollo-cache-inmemory": "^1.2.2",
+    "apollo-client": "^2.3.2",
+    "apollo-link-http": "^1.5.4"
   },
   "devDependencies": {
     "babel-loader": "^7.1.4",
