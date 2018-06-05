@@ -29,7 +29,7 @@ export const graphQLRequest = async (uri, request, variables = {}) => {
       fetchPolicy: 'network-only'
     })
   else if (operation === 'mutation')
-    result = graphqlClient.query({
+    result = graphqlClient.mutate({
       mutation: request,
       variables,
       fetchPolicy: 'network-only'
