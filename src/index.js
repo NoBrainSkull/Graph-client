@@ -32,7 +32,7 @@ export const graphQLRequest = async (uri, request, variables = {}) => {
     result = graphqlClient.mutate({
       mutation: request,
       variables,
-      fetchPolicy: 'network-only'
+      fetchPolicy: 'no-cache'
     })
   else
     throw new Error(`[Apollo Error](${uri}) - Operation ${operation} unhandled`)
