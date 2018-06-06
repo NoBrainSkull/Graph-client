@@ -37,8 +37,10 @@ export const graphQLRequest = async (uri, request, variables = {}) => {
   else
     throw new Error(`[Apollo Error](${uri}) - Operation ${operation} unhandled`)
 
-  const { data } = await result.catch(({ networkError }) => {
+  const { data } = await result.catch(e => {
+    const { networkError } = e
     if (
+      networkError &&
       networkError.result &&
       networkError.result.errors &&
       networkError.result.errors.length > 0
@@ -46,9 +48,13 @@ export const graphQLRequest = async (uri, request, variables = {}) => {
       throw new Error(
         `[Apollo Error](${uri}) - ${networkError.result.errors[0].message}`
       )
-    else if (networkError.result && !!networkError.result.message)
+    else if (
+      networkError &&
+      networkError.result &&
+      !!networkError.result.message
+    )
       throw new Error(`[Apollo Error](${uri}) - ${networkError.result.message}`)
-    throw networkError
+    throw e
   })
   const key = Object.keys(data)[0]
   return data[key]
