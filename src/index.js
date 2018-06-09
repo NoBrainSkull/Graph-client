@@ -6,20 +6,20 @@ import { hmacfetch } from '@nutshelllab/aws4-signer'
 const cache = new InMemoryCache()
 
 export const graphQLClient = uri => {
-  const link = new HttpLink({ uri, fetch: hmacfetch })
+  const link = new HttpLink({ uri, headers, fetch: hmacfetch })
   return new ApolloClient({
     link,
     cache
   })
 }
 
-export const graphQLRequest = async (uri, request, variables = {}) => {
+export const graphQLRequest = async (uri, request, variables = {}, headers = {}) => {
   if (!request.definitions || request.definitions.length < 1)
     throw new Error(
       `[Apollo Error](${uri}) - GraphQL request does not contain any operation`
     )
   const operation = request.definitions[0].operation
-  const graphqlClient = await graphQLClient(uri)
+  const graphqlClient = await graphQLClient(uri, headers)
   let result = null
 
   if (operation === 'query')
