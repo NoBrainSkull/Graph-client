@@ -5,7 +5,7 @@ import { hmacfetch } from '@nutshelllab/aws4-signer'
 
 const cache = new InMemoryCache()
 
-export const graphQLClient = uri => {
+export const graphQLClient = (uri, headers) => {
   const link = new HttpLink({ uri, headers, fetch: hmacfetch })
   return new ApolloClient({
     link,
@@ -24,6 +24,7 @@ export const graphQLRequest = async (uri, request, variables = {}, headers = {})
 
   if (operation === 'query')
     result = graphqlClient.query({
+      
       query: request,
       variables,
       fetchPolicy: 'network-only'
