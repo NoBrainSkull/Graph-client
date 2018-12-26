@@ -22,7 +22,7 @@
   },
   "homepage": "https://github.com/RaisonBlue/Graph-client#readme",
   "dependencies": {
-    "@nutshelllab/aws4-signer": "^0.0.1",
+    "@nutshelllab/aws4-signer": "^0.0.2",
     "apollo-cache-inmemory": "^1.2.2",
     "apollo-client": "^2.3.2",
     "apollo-link-http": "^1.5.4"
